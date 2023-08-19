@@ -11,7 +11,7 @@ try {
     const destBase = core.getInput('destBase', {required: false}) || undefined;
     const modeOne = core.getInput('one', {required: false}).length > 0;
     const modeMulti = core.getInput('multi', {required: false}).length > 0;
-    console.log(`Copying "${sourceFile}" to "${targetFile}"`);
+    console.log("Copying ", sourceFile, " to ", targetFile);
     console.log(`modeOne:${modeOne} , modeMulti:${modeMulti}`);
     console.log(`cwd:${cwd} , srcBase:${srcBase} , destBase:${destBase}`);
 
