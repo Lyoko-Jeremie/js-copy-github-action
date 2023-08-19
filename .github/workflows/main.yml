@@ -1,11 +1,12 @@
 name: copy files
-on: [push]
+on: [ push ]
 jobs:
   build:
     name: Build
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@master
+      - uses: actions/checkout@v3
+
       - name: Copy file
         uses: Lyoko-Jeremie/js-copy-github-action@master
         with:
