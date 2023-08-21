@@ -11,6 +11,7 @@ try {
     const destBase = core.getInput('destBase', {required: false}) || undefined;
     const modeOne = core.getInput('one', {required: false}).length > 0;
     const modeMulti = core.getInput('multi', {required: false}).length > 0;
+    const modeList = core.getInput('list', {required: false}).length > 0;
     console.log("Copying ", sourceFile, " to ", targetFile);
     console.log(`modeOne:${modeOne} , modeMulti:${modeMulti}`);
     console.log(`cwd:${cwd} , srcBase:${srcBase} , destBase:${destBase}`);
@@ -33,6 +34,16 @@ try {
                 core.setFailed(err);
             }
             console.log(files);
+        });
+    } else if (modeList) {
+        console.log(`run in modeList`);
+        sourceFile.map(T => {
+            return copy(T, targetFile, opt, (err, files) => {
+                if (err) {
+                    core.setFailed(err);
+                }
+                console.log(T, files);
+            });
         });
     } else {
         console.log(`run in normal`);

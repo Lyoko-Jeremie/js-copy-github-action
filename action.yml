@@ -33,6 +33,10 @@ inputs:
     description: "multi line source mode"
     required: false
     default: ""
+  list: # id of input
+    description: "multi line source mode with patterns"
+    required: false
+    default: ""
 runs:
   using: "node16"
   main: "index.js"
