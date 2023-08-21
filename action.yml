@@ -25,11 +25,11 @@ inputs:
     description: "Target File Base dir"
     required: false
     default: ""
-  modeOne: # id of input
+  one: # id of input
     description: "one file copy mode"
     required: false
     default: ""
-  modeMulti: # id of input
+  multi: # id of input
     description: "multi line source mode"
     required: false
     default: ""
